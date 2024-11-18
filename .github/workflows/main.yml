@@ -47,7 +47,7 @@ jobs:
       with:
         tag_name: v${{ env.version }}
         release_name: Release v${{ env.version }}
-        draft: true
+        draft: false
         prerelease: false
 
     - name: Upload Release Asset
