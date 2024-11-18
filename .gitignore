@@ -13,3 +13,4 @@ yarn-error.log*
 /dist
 /backend/chatlogs.sqlite3.db\
 .env
+.DS_Store
