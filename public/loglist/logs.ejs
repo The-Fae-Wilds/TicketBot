@@ -1,0 +1,70 @@
+<div id="loglist" class="content">
+    <div id="loglist-header">
+        <div id="loglist-header-title">
+        </div>
+    </div>
+    <div id="loglist-logs" class="d-flex">
+        <table class="table-bordered container" id="logTable">
+            <thead>
+                <tr>
+                    <th>
+                        Instigator
+                        <input type="text" class="col-search form-control" onkeyup="filterTable(0)" placeholder="Filter">
+                    </th>
+                    <th>
+                        Involved Users
+                        <input type="text" class="col-search form-control" onkeyup="filterTable(1)" placeholder="Filter">
+                    </th>
+                    <th>
+                        Date/Time Opened
+                        <input type="text" class="col-search form-control" onkeyup="filterTable(2)" placeholder="Filter">
+                    </th>
+                    <th>
+                        Link To Log
+                        <input type="text" class="col-search form-control" onkeyup="filterTable(3)" placeholder="Filter">
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        fetch('/api/logs')
+            .then(response => response.json())
+            .then(data => {
+                const tbody = document.querySelector('#logTable tbody');
+                data.forEach(log => {
+                    console.log(log)
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td>${log.instigator}</td>
+                        <td>${log.members}</td>
+                        <td>${new Date(log.timestampOpen)}</td>
+                        <td><a href="/chatlog/${log.id}">Link</a></td>
+                    `;
+                    tbody.appendChild(row);
+                });
+            })
+            .catch(error => console.error('Error fetching log data:', error));
+    });
+
+    function filterTable(colIndex) {
+        const table = document.getElementById('logTable');
+        const tr = table.getElementsByTagName('tr');
+        const input = document.getElementsByClassName('col-search')[colIndex];
+        const filter = input.value.toLowerCase();
+
+        for (let i = 1; i < tr.length; i++) {
+            const td = tr[i].getElementsByTagName('td')[colIndex];
+            if (td) {
+                const txtValue = td.textContent || td.innerText;
+                tr[i].style.display = txtValue.toLowerCase().indexOf(filter) > -1 ? '' : 'none';
+            }
+        }
+    }
+</script>

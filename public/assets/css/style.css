@@ -1,0 +1,77 @@
+:root {
+    --bs-tertiary-bg: #3c3c5e;
+    --bs-body-color: #e0e0e0;
+    --bs-body-bg: #1e1e2f;
+    --bs-border-width: 1px;
+    --bs-border-color: #4c4c6e;
+    --bs-secondary-color: #7272b5;
+    --form-bg: #2c2c3e;
+    --content-color: #26263c;
+
+}
+
+
+body {
+    background-color: var(--bs-body-bg);
+    color: var(--bs-body-color);
+}
+
+.content {
+    background-color: var(--content-color);
+    height: 100vh;
+}
+
+.navbar {
+    background-color: var(--form-bg) !important;
+    color: var(--bs-navbar-color);
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    max-width: 80%;
+    margin: 0 auto 20px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+    color: var(--bs-navbar-brand-color);
+}
+
+.nav-link {
+    color: var(--bs-navbar-nav-link-color);
+}
+
+.nav-link:hover {
+    color: var(--bs-navbar-nav-link-hover-color);
+}
+
+.btn-primary {
+    background-color: var(--bs-btn-primary-bg);
+    border-color: var(--bs-btn-primary-border);
+}
+
+.btn-primary:hover {
+    background-color: var(--bs-btn-primary-hover-bg);
+    border-color: var(--bs-btn-primary-hover-border);
+}
+
+.btn-secondary {
+    background-color: var(--bs-btn-secondary-bg);
+    border-color: var(--bs-btn-secondary-border);
+}
+
+.btn-secondary:hover {
+    background-color: var(--bs-btn-secondary-hover-bg);
+    border-color: var(--bs-btn-secondary-hover-border);
+}
+
+.navbar.nav {
+    display: flex;
+    align-items: center;
+}
+
+.navbar.nav .nav-link {
+    align-self: center;
+}
+
+.container-fluid.content {
+    max-width: 90%;
+}

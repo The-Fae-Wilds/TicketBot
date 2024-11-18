@@ -1,0 +1,16 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+    <ul class="navbar-nav">
+        <a class="nav-link navbar-brand" href="/" style="text-decoration: none">
+            <h1><i class="bi-house-door"></i></h1>
+        </a>
+        <% nav.forEach(function(page) { %>
+            <% if(page !== "404" && page !=="home") { %>
+                <a class="nav-link" href="<%- page %>" style="text-decoration: none">
+                    <button class="btn btn-primary"><%- page.toLocaleUpperCase() %></button>
+                </a>
+            <% } %>
+        <% }) %>
+    </ul>
+</div>
+</nav>

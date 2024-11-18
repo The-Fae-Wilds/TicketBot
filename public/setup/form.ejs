@@ -1,0 +1,99 @@
+<form id="setupForm" onsubmit="handleSubmit(event)">
+    <span><h4>Storage</h4></span>
+    <div class="input-group">
+        <span class="input-group-text" id="sqlserver">SQL Server Type:</span>
+        <select class="form-select" id="sqlServer" name="sqlServerType" required autocomplete="off"
+                onchange="toggleInputs()"
+                aria-describedby="sqlserver">
+            <option value="" selected disabled>Select SQL Type</option>
+            <option value="sqlite">SQLite</option>
+            <option value="mysql">MySQL</option>
+        </select>
+    </div>
+    <br>
+    <div id="mysqlInputs" style="display: none">
+    <div class="input-group">
+        <span class="input-group-text">MySQL Host:</span>
+        <input type="text" class="form-control" id="mysqlHost" name="mysqlHost" aria-label="root"
+               autocomplete="off">
+    </div>
+    <br>
+    <div class="input-group">
+        <span class="input-group-text">MySQL Port:</span>
+        <input type="text" class="form-control" id="mysqlPort" name="mysqlPort" aria-label="root"
+               autocomplete="off">
+    </div>
+    <br>
+    <div class="input-group">
+        <span class="input-group-text">MySQL User:</span>
+        <input type="text" class="form-control" id="mysqlUser" name="mysqlUser" aria-label="root"
+               autocomplete="off">
+    </div>
+    <br>
+    <div class="input-group">
+        <span class="input-group-text">MySQL Password:</span>
+        <input type="text" class="form-control" id="mysqlPassword" name="mysqlPassword" aria-label="root"
+               autocomplete="off">
+    </div>
+    <br>
+        <div class="input-group">
+            <span class="input-group-text">MySQL Database Name:</span>
+            <input type="text" class="form-control" id="mysqlDatabase" name="mysqlDatabase" aria-label="root"
+                   autocomplete="off">
+        </div>
+        <br>
+    </div>
+    <div class="input-group">
+        <span class="input-group-text">SQL Table Name</span>
+        <input type="text" class="form-control" id="sqlTable" name="sqlTable" required autocomplete="off">
+    </div>
+    <br>
+    <span><h4>Discord Bot</h4></span>
+
+    <div class="input-group">
+        <span class="input-group-text">Bot ID:</span>
+        <input type="text" class="form-control" id="botID" name="botID" required
+               autocomplete="off">
+    </div>
+    <br>
+
+    <div class="input-group">
+        <span class="input-group-text">Bot Token:</span>
+        <input type="text" class="form-control" id="botToken" name="botToken" placeholder="YOUR.BOT.TOKEN" aria-label="YOUR.BOT.TOKEN" required
+               autocomplete="off">
+    </div>
+    <br>
+    <div class="input-group">
+        <span class="input-group-text">Discord Admins (Role):</span>
+        <input type="text" class="form-control" id="discordAdmins" name="discordAdmins" placeholder="Admin1, Admin2..." required autocomplete="off">
+    </div>
+    <br>
+    <div class="input-group">
+        <span class="input-group-text">Discord Moderators (Role):</span>
+        <input type="text" class="form-control" id="discordMods" name="discordMods" placeholder="Mod1, Mod2..." required autocomplete="off">
+    </div>
+    <br>
+    <div class="input-group">
+        <span class="input-group-text">Ticket Type:</span>
+        <input type="text" class="form-select" id="discordTickets" name="discordTickets" required autocomplete="off">
+            <option value="channel">Channel</option>
+            <option value="thread">Thread</option>
+    </div>
+
+    <span><h4>Website</h4></span>
+
+    <div class="input-group">
+        <span class="input-group-text">Website Port</span>
+        <input type="number" class="form-control" id="websitePort" name="websitePort" min="3000" max="7000"
+               required autocomplete="off">
+    </div>
+    <br>
+    <div class="input-group">
+        <span class="input-group-text">Website URL</span>
+        <input type="text" class="form-control" id="websiteURL" name="websiteURL" placeholder="example.com" required autocomplete="off">
+    </div>
+    <br>
+    <div class="d-flex justify-content-end">
+        <button class="btn btn-outline-primary" type="submit">Done</button>
+    </div>
+</form>
